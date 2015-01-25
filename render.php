@@ -20,9 +20,7 @@ function zawiw_blog_overview_shortcode($filter)
 		if(isset($preg) && preg_match($preg, strtolower($name)) === 1)
 			continue;
 		else
-		{
 			echo "<div class='zawiw_blog_overview_item'><a href='" . $url . "'>" . $name . '</a></div>';
-		}
 	}
 	echo "</div>";
 	switch_to_blog($start_blog);
@@ -33,8 +31,7 @@ function zawiw_blog_overview_queue_stylesheet()
 	global $post;	//Contains the whole site content
 	if(!has_shortcode($post->post_content, 'zawiw_blog_overview'))	//Loads stylesheets only if shortcode exists
 		return;
-    wp_enqueue_style( 'zawiw_blog_overview_style', plugins_url( 'style.css', __FILE__ ) );
-
+    	wp_enqueue_style( 'zawiw_blog_overview_style', plugins_url( 'style.css', __FILE__ ) );
 }
 
 ?>
